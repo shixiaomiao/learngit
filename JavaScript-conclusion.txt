@@ -1,9 +1,17 @@
 1.Javascript 是由三大部分组成的：ECMA,DOM,BOM
-
-ECMA:用于翻译，相当于解释器。几乎没有兼容性问题。
-
-DOM：Document Object Model,用来操作HTML的。有一些操作不兼容。
-
-BOM：Browser Object Model,浏览器对象模型。没有兼容问题，完全不兼容。
-
-2.用typeof来读取
+	ECMA:用于翻译，相当于解释器。几乎没有兼容性问题。
+	DOM：Document Object Model,用来操作HTML的。有一些操作不兼容。
+	BOM：Browser Object Model,浏览器对象模型。没有兼容问题，完全不兼容。
+2.用typeof来读取变量类型
+3.js的数据类型有：number,string ,boolean ,function
+4.一个变量应该至存放一种类型的数据
+5.类型转换：
+(1)强制类型转换
+a.paseInt(x):将字符串转成数字（整数）
+(从左向右看，一旦碰到非数字即跳出)
+b.NaN：非数字
+	any + NaN = NaN
+	NaN和NaN不相等。
+	isNaN(x):用于判断x是否是非数字.
+c.parseFloat:转换成小数或整数
+(2)
