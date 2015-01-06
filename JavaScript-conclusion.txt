@@ -1,0 +1,9 @@
+1.Javascript 是由三大部分组成的：ECMA,DOM,BOM
+
+ECMA:用于翻译，相当于解释器。几乎没有兼容性问题。
+
+DOM：Document Object Model,用来操作HTML的。有一些操作不兼容。
+
+BOM：Browser Object Model,浏览器对象模型。没有兼容问题，完全不兼容。
+
+2.用typeof来读取
