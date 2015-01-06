@@ -22,7 +22,7 @@
 7.获取非行间样式（不同用来设置）
 oDiv.currentStyle.width：只兼容IE
 在chrome.Firx下：getComputedStyle(oDiv,false).width)
-可以封装成去非行间样式的函数
+可以封装成去非行间样式的函数:（无法获取复合样式（background,border等））
 function getStyle(obj,name)
 {
 	if (obj.currentStyle)
@@ -34,3 +34,41 @@ function getStyle(obj,name)
 		return getComputedStyle(obj,false)[name];
 	}
 }
+8.数组
+	var a = [1,3,4,3];
+	属性：a.length
+	可以对a.length进行赋值
+	eg:a,length = 2 => a = [1,3]
+(1)数组元素添加：
+	i.从尾部添加：a.push(33)
+	ii.从头部添加：a.unshift(33);
+(2)数组元素删除：
+	i.从尾部删除：a.pop();
+	ii.从头部删除：a.shift();
+9.数组的切片:splice
+	a.连续删除元素:splice (起点，长度)
+	eg: var a = [1,2,3,4,5,6];
+		a.splice(1,2)  =>a = [1,4,5,6]
+	b.插入元素：splice(起点，0，待插元素)
+	eg: var a = [1,2,3,4,5,6];
+		a.splice(1,0,9,7) => a = [1,9,7,2,3,4,5,6];
+	c.替换元素：splice (起点，长度，替换元素)
+	eg: var a = [1,2,3,4,5,6];
+		a.splice(2,2,"a"); => a =[1,2,a,5,6];
+	e.数组元素的连接： join(这个方法审查不通过哟，待检验)
+	eg: var a = [1,2,3,4];
+		a.join('-')
+	f.排序；sort(参数） （参数为函数，即比较函数）
+	（1）从小到大
+	eg: var a = [4,2,1];
+		a.sort(function(n1,n2){return n1-n2;})  => a = [1,2,4]
+	（2）从大到小
+	eg: var a = [4,2,1];
+	   a.sort(function(n1,n2){return n2-n1;})  =>  a = [4,2,1]
+	g.数组连接:concat 
+	eg:	var a = [1,6,3];
+		var b = ["dd","ff"];
+		var c = a.concat(b);   => c = [1,6,3,"dd","ff"]
+		var d = b.concat(a);   => d = ["dd","ff",1,6,3]
+		注： 数组 a 和 b 不变
+	
