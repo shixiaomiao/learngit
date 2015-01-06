@@ -7,11 +7,30 @@
 4.一个变量应该至存放一种类型的数据
 5.类型转换：
 (1)强制类型转换
-a.paseInt(x):将字符串转成数字（整数）
-(从左向右看，一旦碰到非数字即跳出)
-b.NaN：非数字
-	any + NaN = NaN
-	NaN和NaN不相等。
-	isNaN(x):用于判断x是否是非数字.
-c.parseFloat:转换成小数或整数
-(2)
+	a.paseInt(x):将字符串转成数字（整数）
+	(从左向右看，一旦碰到非数字即跳出)
+	b.NaN：非数字
+		any + NaN = NaN
+		NaN和NaN不相等。
+		isNaN(x):用于判断x是否是非数字.
+	c.parseFloat:转换成小数或整数
+(2)隐式类型转换
+	a. == ：转化成相同类型后再比较
+	b.=== ：强制比较，不转化类型直接比较
+	c.减法
+6.函数返回值：一个函数应该只返回一种类型的值。
+7.获取非行间样式（不同用来设置）
+oDiv.currentStyle.width：只兼容IE
+在chrome.Firx下：getComputedStyle(oDiv,false).width)
+可以封装成去非行间样式的函数
+function getStyle(obj,name)
+{
+	if (obj.currentStyle)
+	{
+		return obj.currentStyle[name];
+	}
+	else
+	{
+		return getComputedStyle(obj,false)[name];
+	}
+}
